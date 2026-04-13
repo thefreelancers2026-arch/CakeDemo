@@ -138,16 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- Parallax Effect for Hero Blob --- */
-    const heroBlob = document.querySelector('.blob-bg-static');
-    if (heroBlob) {
-        window.addEventListener('mousemove', (e) => {
-            /* Center of screen is 0. Moving right causes negative shift (opposite direction) */
-            const xOffset = (window.innerWidth / 2 - e.pageX) / 50; /* Limits to ~15px shift on desktop */
-            heroBlob.style.transform = `translateY(-50%) translateX(${xOffset}px)`;
-        });
-    }
-
     /* --- Mobile Navigation Toggle --- */
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
