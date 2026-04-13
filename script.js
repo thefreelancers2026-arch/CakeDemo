@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardsEffect: {
         slideShadows: true, /* Enable default shadows for 3d depth on cards */
       },
+      speed: 1000, /* 1 second smooth swiping to next item */
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
