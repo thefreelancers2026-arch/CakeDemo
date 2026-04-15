@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicia | Best Custom Cakes Bakery</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Swiper CSS -->
@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Micro Interactions Layers -->
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
@@ -32,64 +36,35 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="reveal-text">Best Custom<br>Cakes Bakery</h1>
-            <p class="subtext reveal-element" style="transition-delay: 0.1s">Premium Quality Cakes since 1995</p>
-            <a href="#products" class="btn-primary reveal-element" style="transition-delay: 0.2s">Explore Our Cakes</a>
+    <!-- Premium Interactive Hero Section -->
+    <section id="home" class="hero premium-hero parallax-container">
+        <!-- Animated Background Lights for Depth -->
+        <div class="light-spot spot1"></div>
+        <div class="light-spot spot2"></div>
+        <div class="light-spot spot3"></div>
+
+        <!-- Floating Particles & Micro-elements -->
+        <div class="particles">
+            <i class="fa-solid fa-star sparkle s1"></i>
+            <i class="fa-solid fa-cake-candles icon-float p1"></i>
+            <i class="fa-solid fa-star sparkle s2"></i>
+            <i class="fa-solid fa-cookie-bite icon-float p3"></i>
+            <i class="fa-solid fa-heart icon-float p2"></i>
+            <div class="particle-dot d1"></div>
+            <div class="particle-dot d2"></div>
+        </div>
+
+        <!-- Hero Typography & CTA -->
+        <div class="hero-content z-index-content">
+            <h1 class="slide-up-text">Crafted for<br><span class="gold-text">Sweet Perfection</span></h1>
+            <p class="subtext slide-up-text delay-1">Artfully crafted cakes made with the finest ingredients.</p>
+            <a href="#products" class="btn-premium slide-up-text delay-2">
+                Discover Our Collection <i class="fa-solid fa-arrow-right icon-inside"></i>
+            </a>
         </div>
         
-        <div class="hero-visuals">
-            
-
-            <!-- Floating Decorative Elements -->
-            <div class="deco balloon-gold">
-                <svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="goldGrad" cx="35%" cy="30%" r="70%">
-                            <stop offset="0%" stop-color="#fff8d6"/>
-                            <stop offset="40%" stop-color="#ffd700"/>
-                            <stop offset="100%" stop-color="#b8860b"/>
-                        </radialGradient>
-                    </defs>
-                    <ellipse cx="40" cy="45" rx="35" ry="42" fill="url(#goldGrad)" opacity="0.9"/>
-                    <ellipse cx="28" cy="25" rx="10" ry="18" fill="rgba(255,255,255,0.6)" transform="rotate(-35 28 25)" />
-                    <polygon points="34,85 46,85 40,92" fill="#d4af37" />
-                    <path d="M 40 92 Q 30 105 45 115 T 40 120" fill="none" stroke="#fff" stroke-width="2" opacity="0.6" />
-                </svg>
-            </div>
-            <div class="deco balloon-black">
-                <svg width="70" height="110" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="blackGrad" cx="35%" cy="30%" r="70%">
-                            <stop offset="0%" stop-color="#666"/>
-                            <stop offset="50%" stop-color="#1a1a1a"/>
-                            <stop offset="100%" stop-color="#000"/>
-                        </radialGradient>
-                    </defs>
-                    <ellipse cx="40" cy="45" rx="35" ry="42" fill="url(#blackGrad)" opacity="0.95"/>
-                    <ellipse cx="28" cy="25" rx="10" ry="18" fill="rgba(255,255,255,0.4)" transform="rotate(-35 28 25)" />
-                    <polygon points="34,85 46,85 40,92" fill="#222" />
-                    <path d="M 40 92 Q 30 105 45 115 T 40 120" fill="none" stroke="#fff" stroke-width="2" opacity="0.6" />
-                </svg>
-            </div>
-            
-            <div class="deco mint-leaf1">
-                <svg width="40" height="50" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15,0 C28,8 35,20 15,40 C-5,20 2,8 15,0 Z" fill="#4ade80" opacity="0.8"/>
-                    <path d="M15,40 Q15,20 15,0 M15,25 Q20,15 23,10 M15,30 Q10,20 7,15" fill="none" stroke="#22c55e" stroke-width="1.5" />
-                </svg>
-            </div>
-            <div class="deco mint-leaf2">
-                <svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15,0 C28,8 35,20 15,40 C-5,20 2,8 15,0 Z" fill="#4ade80" opacity="0.75"/>
-                    <path d="M15,40 Q15,20 15,0 M15,25 Q20,15 23,10 M15,30 Q10,20 7,15" fill="none" stroke="#22c55e" stroke-width="1.5" />
-                </svg>
-            </div>
-
-
-
+        <!-- Hero Visual (Carousel with Glass Stage) -->
+        <div class="hero-visuals parallax-element z-index-content" data-speed="0.04">
             <!-- The Stage -->
             <div class="display-stage">
                 <!-- Elegant Glass Base -->
@@ -101,7 +76,7 @@
                 <!-- Swiper -->
                 <div class="swiper cakeSwiper">
                     <div class="swiper-wrapper">
-                        <!-- Background Removed Transparent Photos mapped directly from your paste! -->
+                        <!-- Background Removed Transparent Photos -->
                         <div class="swiper-slide">
                             <div class="cake-crop">
                                 <img src="./assets/SaveGram.App_659211954_17967583800049478_5923255156301595047_n-removebg-preview.png" alt="Custom Transparent Cake">
@@ -141,20 +116,25 @@
                 <img src="./assets/chef_1776104827310.png" alt="Our Executive Chef">
             </div>
             <div class="about-text reveal-element delay-200">
-                <h2>Our Passion For <br>Baking Cakes</h2>
-                <p>We are a bakery specializing in homemade desserts, custom cakes, brownies, and a wide variety of gourmet sweets. Our passion for baking allows us to create perfect sweet experiences for celebrations, special events, or simply to enjoy anytime.</p>
-                <a href="#products" class="btn-about">View our products</a>
+                <h2 class="gold-text">A Symphony of <br>Flavors & Elegance</h2>
+                <p>We meticulously handcraft <span class="gold-text">artisanal</span> desserts, <span class="gold-text">signature</span> cakes, and a curated selection of gourmet sweets. Our devotion to the culinary arts ensures an unforgettable <span class="gold-text">luxury experience</span> designed for your most cherished moments.</p>
+                <a href="#products" class="btn-about">Explore the Indulgence</a>
             </div>
         </div>
     </section>
 
     <!-- Filtered Product Gallery -->
-    <section id="products" class="products">
-        <h2 class="section-title reveal-element">Our Products</h2>
-        <div class="product-filters reveal-element delay-100">
-            <button class="filter-btn active" data-filter="all">All Items</button>
-            <button class="filter-btn" data-filter="luxury">Luxury Cakes</button>
-            <button class="filter-btn" data-filter="custom">Custom Creations</button>
+    <section id="products" class="products bg-luxury transition-bg">
+        <h2 class="section-title reveal-element gold-text">Our Products</h2>
+        <div class="product-filters-wrapper reveal-element delay-100">
+            <div class="product-filters">
+                <button class="filter-tab active" data-filter="all" data-bg="bg-luxury">All Items</button>
+                <button class="filter-tab" data-filter="luxury" data-bg="bg-luxury">Luxury Cakes</button>
+                <button class="filter-tab" data-filter="custom" data-bg="bg-custom">Custom Creations</button>
+                <button class="filter-tab" data-filter="chocolate" data-bg="bg-chocolate">Chocolate Cakes</button>
+                <button class="filter-tab" data-filter="wedding" data-bg="bg-wedding">Wedding Cakes</button>
+                <div class="filter-underline"></div>
+            </div>
         </div>
         <div class="product-grid">
             <!-- LUXURY CAKES -->
@@ -163,9 +143,10 @@
                     <img src="./assets/SaveGram.App_659211954_17967583800049478_5923255156301595047_n-removebg-preview.png" alt="Masterpiece Cake" style="mix-blend-mode: normal;">
                 </div>
                 <div class="card-info">
-                    <h3>Signature Bow Masterpiece</h3>
-                    <p class="price">$120.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Chennai Signature Bow</h3>
+                    <p class="desc">A velvety indulgence adorned with bespoke artisanal frosting.</p>
+                    <p class="price">₹1450</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
             <div class="product-card reveal-element" data-category="luxury" style="transition-delay: 0.2s;">
@@ -173,29 +154,32 @@
                     <img src="./assets/SaveGram.App_659908733_17967103896049478_4917054626432555490_n-removebg-preview.png" alt="Golden Elegance Cake" style="mix-blend-mode: normal;">
                 </div>
                 <div class="card-info">
-                    <h3>Golden Elegance</h3>
-                    <p class="price">$145.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Kanchipuram Gold Elegance</h3>
+                    <p class="desc">Delicate layers infused with pure gold and rich cream.</p>
+                    <p class="price">₹2150</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
-            <div class="product-card reveal-element" data-category="luxury" style="transition-delay: 0.3s;">
+            <div class="product-card reveal-element" data-category="wedding" style="transition-delay: 0.3s;">
                 <div class="card-img">
-                    <img src="./assets/vanilla_cake_1776104332418.png" alt="Vanilla">
+                    <img src="./assets/vanilla_cake_1776104332418-nobg.png" alt="Vanilla">
                 </div>
                 <div class="card-info">
-                    <h3>Classic Vanilla Elegance</h3>
-                    <p class="price">$50.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Kodaikanal Vanilla Classic</h3>
+                    <p class="desc">A feather-light masterpiece crafted with artisanal vanilla bean.</p>
+                    <p class="price">₹650</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
             <div class="product-card reveal-element" data-category="luxury" style="transition-delay: 0.4s;">
                 <div class="card-img">
-                    <img src="./assets/strawberry_cake_1776104196224.png" alt="Strawberry">
+                    <img src="./assets/strawberry_cake_1776104196224-nobg.png" alt="Strawberry">
                 </div>
                 <div class="card-info">
-                    <h3>Strawberry Blossom</h3>
-                    <p class="price">$55.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Ooty Strawberry Reverie</h3>
+                    <p class="desc">Handpicked organic strawberries enveloped in soft mascarpone cream.</p>
+                    <p class="price">₹750</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
 
@@ -205,9 +189,10 @@
                     <img src="./assets/SaveGram.App_670297403_17968343886049478_982868491252944482_n-removebg-preview.png" alt="Anime Theme Cake" style="mix-blend-mode: normal;">
                 </div>
                 <div class="card-info">
-                    <h3>Ninja Custom Design</h3>
-                    <p class="price">$95.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Coimbatore Custom Avant-Garde</h3>
+                    <p class="desc">A stunning personalized creation reflecting modern culinary artistry.</p>
+                    <p class="price">₹1100</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
             <div class="product-card reveal-element" data-category="custom" style="transition-delay: 0.6s;">
@@ -215,9 +200,10 @@
                     <img src="./assets/SaveGram.App_670490995_17968343244049478_3192022720668277406_n-removebg-preview.png" alt="Anniversary Specials" style="mix-blend-mode: normal;">
                 </div>
                 <div class="card-info">
-                    <h3>Pistachio Anniversary</h3>
-                    <p class="price">$110.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Trichy Pistachio Velvet</h3>
+                    <p class="desc">Rich roasted pistachios woven into a symphony of elegance.</p>
+                    <p class="price">₹1250</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
             <div class="product-card reveal-element" data-category="custom" style="transition-delay: 0.7s;">
@@ -225,30 +211,81 @@
                     <img src="./assets/SaveGram.App_671205595_17968452321049478_5270815396611701233_n-removebg-preview.png" alt="Floral Cupcakes" style="mix-blend-mode: normal;">
                 </div>
                 <div class="card-info">
-                    <h3>Lavender Floral Delight</h3>
-                    <p class="price">$85.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Kumbakonam Rose Petal Cake</h3>
+                    <p class="desc">A fragrant, botanical sensation designed for luxury palates.</p>
+                    <p class="price">₹950</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
-            <div class="product-card reveal-element" data-category="custom" style="transition-delay: 0.8s;">
+            <div class="product-card reveal-element" data-category="chocolate" style="transition-delay: 0.8s;">
                 <div class="card-img">
-                    <img src="./assets/nutty_chocolate_cake_1776104211012.png" alt="Chocolate">
+                    <img src="./assets/nutty_chocolate_cake_1776104211012-nobg.png" alt="Chocolate">
                 </div>
                 <div class="card-info">
-                    <h3>Nutty Chocolate Praline</h3>
-                    <p class="price">$65.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Madurai Cocoa Indulgence</h3>
+                    <p class="desc">Decadent dark chocolate paired with crisp hazelnut praline.</p>
+                    <p class="price">₹850</p>
+                    <button class="btn-order">Order Your Delight</button>
+                </div>
+            </div>
+            
+            <div class="product-card reveal-element" data-category="chocolate" style="transition-delay: 0.85s;">
+                <div class="card-img">
+                    <img src="./assets/choclate_cake_1-nobg.png" alt="Midnight Velour Cake">
+                </div>
+                <div class="card-info">
+                    <h3>Chettinad Dark Velour</h3>
+                    <p class="desc">Dark cocoa perfection enrobed in a smooth matte finish.</p>
+                    <p class="price">₹900</p>
+                    <button class="btn-order">Order Your Delight</button>
+                </div>
+            </div>
+
+            <div class="product-card reveal-element" data-category="chocolate" style="transition-delay: 0.9s;">
+                <div class="card-img">
+                    <img src="./assets/dark_Choclate_2-nobg.png" alt="Gold Crown Chocolate">
+                </div>
+                <div class="card-info">
+                    <h3>Thanjavur Crown Velvet</h3>
+                    <p class="desc">Artisanal chocolate shards on top of rich dark ganache.</p>
+                    <p class="price">₹1000</p>
+                    <button class="btn-order">Order Your Delight</button>
+                </div>
+            </div>
+
+            <div class="product-card reveal-element" data-category="chocolate" style="transition-delay: 0.95s;">
+                <div class="card-img">
+                    <img src="./assets/choclate-nobg.png" alt="Caramel Truffle">
+                </div>
+                <div class="card-info">
+                    <h3>Tuticorin Cocoa Truffle</h3>
+                    <p class="desc">Soft chocolate sponge infused with roasted macadamia crunch.</p>
+                    <p class="price">₹850</p>
+                    <button class="btn-order">Order Your Delight</button>
+                </div>
+            </div>
+            
+            <div class="product-card reveal-element" data-category="chocolate" style="transition-delay: 1.0s;">
+                <div class="card-img">
+                    <img src="./assets/choclate_cake_2-nobg.png" alt="Gold Flake Ganache">
+                </div>
+                <div class="card-info">
+                    <h3>Virudhachalam Mirror Glaze</h3>
+                    <p class="desc">Stunning cocoa mirror glaze adorned with 24k gold leaf.</p>
+                    <p class="price">₹1250</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
             <!-- ADDITIONAL CAKES -->
             <div class="product-card reveal-element" data-category="luxury" style="transition-delay: 0.9s;">
                 <div class="card-img">
-                    <img src="./assets/raspberry_cake_1776104471091.png" alt="Raspberry Cake">
+                    <img src="./assets/raspberry_cake_1776104471091-nobg.png" alt="Raspberry Cake">
                 </div>
                 <div class="card-info">
-                    <h3>Raspberry Royale</h3>
-                    <p class="price">$75.00</p>
-                    <button class="btn-order">Order Now</button>
+                    <h3>Salem Raspberry Royale</h3>
+                    <p class="desc">A luscious burst of wild raspberries refined into a classic torte.</p>
+                    <p class="price">₹950</p>
+                    <button class="btn-order">Order Your Delight</button>
                 </div>
             </div>
         </div>
@@ -258,27 +295,29 @@
     <section id="featured" class="new-creations">
         <div class="new-container">
             <div class="new-text reveal-element">
-                <h2>Try Our <br> New Creations</h2>
-                <p>Discover the latest from our artisanal pastry shop, where we constantly add new desserts and homemade cakes, made with fresh, high-quality ingredients.</p>
-                <button class="btn-primary" style="background-color: var(--pink-accent); color: var(--white); box-shadow: 0 5px 15px rgba(228, 115, 133, 0.4);">Order your cake now</button>
+                <h2 class="gold-text">Discover Our <br> Newest Indulgences</h2>
+                <p>Experience the pinnacle of culinary artistry with our latest seasonal creations, meticulously crafted to elevate your senses.</p>
+                <button class="btn-premium-cta">Reserve Your Masterpiece</button>
             </div>
             <div class="new-image reveal-element delay-200">
                 <div class="watermark-text">DELICIOUS<br>DELICIOUS</div>
                 <div class="swiper newCakeSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide card-slide">
-                            <img src="./assets/raspberry_cake_1776104471091.png" alt="Raspberry Cake">
-                            <h3 class="slide-title">Premium Raspberry Cake</h3>
+                        <div class="swiper-slide card-slide" data-theme="theme-rose">
+                            <img src="./assets/raspberry_cake_1776104471091-nobg.png" alt="Raspberry Cake">
+                            <h3 class="slide-title">Salem Raspberry Royale</h3>
                         </div>
-                        <div class="swiper-slide card-slide">
-                            <img src="./assets/nutty_chocolate_cake_1776104211012.png" alt="Nutty Chocolate Cake">
-                            <h3 class="slide-title">Nutty Chocolate Cake</h3>
+                        <div class="swiper-slide card-slide" data-theme="theme-choco">
+                            <img src="./assets/nutty_chocolate_cake_1776104211012-nobg.png" alt="Nutty Chocolate Cake">
+                            <h3 class="slide-title">Madurai Cocoa Indulgence</h3>
                         </div>
-                        <div class="swiper-slide card-slide">
+                        <div class="swiper-slide card-slide" data-theme="theme-lavender">
                             <img src="./assets/SaveGram.App_671205595_17968452321049478_5270815396611701233_n-removebg-preview.png" alt="Lavender Floral Cake">
-                            <h3 class="slide-title">Lavender Floral Cake</h3>
+                            <h3 class="slide-title">Kumbakonam Rose Petal Cake</h3>
                         </div>
                     </div>
+                    <!-- Pagination dots below slider -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -286,7 +325,7 @@
 
     <!-- Footer -->
     <footer id="contact" class="footer">
-        <h2 class="footer-title reveal-element">Order Your Custom Cake Now!</h2>
+        <h2 class="footer-title reveal-element gold-text">Commission Your Bespoke Creation</h2>
         <div class="footer-grid">
             <div class="footer-col reveal-element delay-100 map-col">
                 <iframe src="https://maps.google.com/maps?q=Virudhachalam&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
@@ -332,8 +371,8 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Place Your Order</h2>
-            <p>Connect with us to customize and finalize your order!</p>
+            <h2 class="gold-text">Secure Your Artisanal Masterpiece</h2>
+            <p>Connect with our master bakers to commission your personalized luxury cake.</p>
             <div class="contact-options">
                 <a href="https://wa.me/918778077747" target="_blank" class="contact-btn whatsapp-btn">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp: 8778077747

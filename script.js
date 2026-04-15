@@ -1,6 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- Swiper Initialization --- */
+    /* --- Custom Cursor --- */
+    const cursor = document.querySelector('.custom-cursor');
+    if (cursor) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Add hover flair on interactive elements
+        const iterables = document.querySelectorAll('a, button, .product-card, .cake-crop img');
+        iterables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+    }
+
+    /* --- Parallax Hero Logic --- */
+    const parallaxHero = document.querySelector('.parallax-container');
+    if (parallaxHero) {
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.parallax-element');
+            // Calculate mouse position relative to center of screen
+            let x = (e.clientX - window.innerWidth / 2);
+            let y = (e.clientY - window.innerHeight / 2);
+
+            elements.forEach((el) => {
+                let speed = el.getAttribute('data-speed') || 0.05;
+                // Move element in opposite direction of mouse
+                el.style.transform = `translateX(${-x * speed}px) translateY(${-y * speed}px)`;
+            });
+        });
+    }    /* --- Swiper Initialization --- */
     /* Updated for true horizontal 'swipe one by one gliding on same pedestal' */
     var swiper = new Swiper(".cakeSwiper", {
       effect: "slide", /* standard horizontal glide */
@@ -15,41 +46,72 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    /* --- Featured Square Cards Swiper --- */
+    /* --- Featured Slider with Dynamic Pepsi-style Background --- */
+    const newCreationsSection = document.querySelector('.new-creations');
+
     var newCakeSwiper = new Swiper(".newCakeSwiper", {
-      effect: "cards",
+      effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: "auto",
       loop: true,
-      cardsEffect: {
-        slideShadows: true, /* Enable default shadows for 3d depth on cards */
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 80,
+        depth: 250,
+        modifier: 1,
+        slideShadows: false,
       },
-      speed: 1800, /* Ultra slow and smooth swiping transition */
-      touchRatio: 0.8, /* Adds slightly more resistance to the physical drag */
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
+      speed: 800, 
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      on: {
+        slideChange: function () {
+            if (!newCreationsSection) return;
+            const activeSlide = this.slides[this.activeIndex];
+            if (activeSlide) {
+                const theme = activeSlide.getAttribute('data-theme');
+                newCreationsSection.classList.remove('theme-rose', 'theme-choco', 'theme-vanilla', 'theme-lavender');
+                if (theme) {
+                    newCreationsSection.classList.add(theme);
+                }
+            }
+        }
       }
     });
 
-    /* --- Product Filter --- */
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    /* --- Premium Product Filter & Dynamic Background --- */
+    const filterTabs = document.querySelectorAll('.filter-tab');
     const productCards = document.querySelectorAll('.product-card');
+    const productsSection = document.getElementById('products');
     
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active from all tabs
+            filterTabs.forEach(t => t.classList.remove('active'));
+            // Add active to clicked
+            tab.classList.add('active');
             
-            const filterValue = btn.getAttribute('data-filter');
+            // Handle Dynamic Background transition 
+            const newBgClass = tab.getAttribute('data-bg');
+            if (productsSection && newBgClass) {
+                // Clear existing bg classes
+                productsSection.classList.remove('bg-luxury', 'bg-custom', 'bg-chocolate', 'bg-wedding');
+                // Apply new bg class smoothly
+                productsSection.classList.add(newBgClass);
+            }
+
+            const filterValue = tab.getAttribute('data-filter');
             
+            // Handle fade/slide filtering
             productCards.forEach(card => {
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                     card.style.display = 'block';
                     card.style.animation = 'none';
-                    card.offsetHeight; /* trigger reflow */
-                    card.style.animation = null; 
+                    card.offsetHeight; // trigger reflow
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
                 }
@@ -150,6 +212,22 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+    }
+
+    /* --- 3D Hover Tilt Effect --- */
+    const tiltEl = document.querySelector('.tilt-effect');
+    if (tiltEl) {
+        document.addEventListener('mousemove', (e) => {
+            const rect = tiltEl.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            if(Math.abs(x) < rect.width && Math.abs(y) < rect.height) {
+                tiltEl.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) scale3d(1.05, 1.05, 1.05)`;
+            } else {
+                tiltEl.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            }
         });
     }
 });
